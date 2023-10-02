@@ -1,11 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const {WebpackManifestPlugin} = require('webpack-manifest-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 module.exports = {
   entry: {
-    bundle: './src/index.js'
+    bundle: './src/index.js',
   },
   output: {
     filename: '[fullhash].js',
@@ -23,19 +23,19 @@ module.exports = {
       // Rule for processing CSS files
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
       // Rule for processing SCSS files
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      filename:'./index.html'
+      filename: './index.html',
     }),
     new CleanWebpackPlugin(),
     new WebpackManifestPlugin(),
